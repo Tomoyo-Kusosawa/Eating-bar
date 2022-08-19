@@ -1,0 +1,29 @@
+<!--miniprogram/pages/lunbo/lunbo.wxml-->
+<view>
+  <view class="lb_swiper">
+    <swiper style='height:{{Hei}};position:relative' indicator-dots="true" circular="true"
+     current="{{bannerCurrent}}" bindchange="bannerChange"
+      autoplay="true" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image mode="widthFix" bindload='imgH' src="{{item.url}}" class="slide-image {{bannerCurrent==index?'slide-active':''}}" style="transition: all 1s"></image>
+          <view style="position:absolute;bottom:94rpx;left:30rpx;width:100%">
+            <text style="color:white">{{item.title}}</text>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<view class='container'>
+    <text>生活再忙，也不要忘记吃饭🐟</text>
+    <view class="top">
+    <button type="primary" bindtap="goTo1">使用</button>
+</view>
+<a href="https://www.bilibili.com/" target="_blank">
+    <button>联系我们</button>
+ </a>
+ <view class="top">
+    <button type="primary" bindtap="goTo2">本周推荐</button>
+</view>
+    </view>

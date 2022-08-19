@@ -1,0 +1,40 @@
+<!-- 筛选和排序 --> 
+<view class="sreenBigBox">
+  <view class="sreenBox">
+    <view class="sreenItems">
+      <view class='sreen ' bindtap="sreenShow">筛选<image class='head {{sreenShow&&"rotating"}}' src="/images/tips/79.jpg"/></view>
+      <view class="sort" bindtap="sortShow">新功能维护中<image class='head {{sortShow&&"rotating"}}' src="/images/tips/79.jpg"/></view>
+    </view>
+  </view>
+    <!-- 下拉框 -->
+<view class="sreenConainer" style="height:{{sreenShow?1500:0}}rpx">
+  <view class="chooseBox">
+    <scroll-view  class="typeBox">
+      <view class="typeItems" wx:for="{{typeItems}}" wx:key="*this"
+        bindtap="chooseType" data-index="{{index}}">
+        <text class="typeItem {{index===typeCurrentIndex?'typeItemAdd':''}}">{{item}}</text>
+      </view>
+    </scroll-view>
+    <scroll-view class="chooseItems" scroll-y> 
+             <block wx:for="{{chooseItems[typeCurrentIndex]}}">
+               <view class='ItemLabel {{item.selected===true?"choosing":""}}' data-value="{{item.name}}" bindtap="chooseItem" checked="{{item.selected}}" data-index="{{index}}">
+                {{item.name}}                                  
+               </view>
+             </block>
+    </scroll-view>
+  </view>
+   <view class="buttonConainer">
+     <button class="cancel" size="mini" bindtap="cancel">取  消</button>
+     <button class="clear" size="mini" bindtap="clear">清  除</button>
+     <button class="confirm"  size="mini" bindtap="confirm">确  认</button>
+   </view>
+   <view style="width: 100%;"/>
+   <view class='mask' v-if="{{flag}}" bindtap="mask"></view>
+</view>
+ 
+<view class="sreenConainer" style="height:{{sortShow?1000:0}}rpx">
+   
+ 
+</view>
+ 
+</view>
