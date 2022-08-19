@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/mine/mine",
+    "pages/fastuse/fastuse",
+    "pages/list/list",
+    "pages/article-detail/article-detail",
+    "pages/news_details/news_details",
+    "pages/news_list/news_list"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "text": "homepage",
+        "pagePath": "pages/homepage/homepage",
+        "iconPath": "images/1.jpg",
+        "selectedIconPath": "images/1.jpg"
+      },
+      {
+        "text": "mine",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/1.jpg",
+        "selectedIconPath": "images/1.jpg"
+      },
+      {
+        "text": "notes",
+        "pagePath": "pages/news_list/news_list",
+        "iconPath": "images/1.jpg",
+        "selectedIconPath": "images/1.jpg"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
