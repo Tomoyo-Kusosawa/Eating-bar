@@ -1,0 +1,11 @@
+<view class="conatiner">
+  <view class="news-item" wx:for="{{newsList}}" wx:for-index="index">
+    <view class="title" bindtap="todetail" data-options="{{item.id}}" >{{item.title}}</view>
+    <view class="author-info">
+      <text class="author-name">作者：{{item.author}} </text>
+      <text class="author-date">发表于 {{item.publishDate}}</text>
+    </view>
+    <view style="border-bottom:1rpx solid #707070;width:100%"></view>
+  </view>
+</view>
+
