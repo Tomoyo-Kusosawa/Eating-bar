@@ -8,9 +8,9 @@
         <text class="author-date">发表于 {{info.publishDate}} </text>
       </view>
       <view class="operation">
-        <image wx:if="{{flag}}" bindtap="changeCollect" src="/images/1.jpg"></image>
-        <image wx:else bindtap="changeCollect" src="/images/share.jpg"></image>
-        <label for="btnId"><image bindtap="share" src="/images/1.jpg"></image></label>
+        <image wx:if="{{flag}}" bindtap="changeCollect" src="/images/tips/love.png"></image>
+        <image wx:else bindtap="changeCollect" src="/images/tips/love.png"></image>
+        <label for="btnId"><image bindtap="share" src="/images/tips/share.png"></image></label>
       </view>
     </view> 
   </view>

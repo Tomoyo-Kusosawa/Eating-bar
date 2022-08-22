@@ -13,17 +13,29 @@
         </swiper-item>
       </block>
     </swiper>
-  </view>
-</view>
-<view class='container'>
-    <text>生活再忙，也不要忘记吃饭🐟</text>
+    <view class="top">今天是{{time}}</view>
+    <text class="top">生活再忙，也不要忘记吃饭🐟</text>
+    <view class="container">
     <view class="top">
-    <button type="primary" bindtap="goTo1">使用</button>
+    <button type="primary" bindtap="goTo1">快速使用</button>
 </view>
-<a href="https://www.bilibili.com/" target="_blank">
-    <button>联系我们</button>
- </a>
+
+<button type="" bindtap="Popup">相关支持</button>
  <view class="top">
     <button type="primary" bindtap="goTo2">本周推荐</button>
 </view>
     </view>
+  </view>
+
+  
+</view>
+
+<!--点击后灰色背景的设置-->
+<view wx:if="{{now_state}}" class="background" 	 bindtap="hideModal"
+></view>
+<!--弹窗的出现-->
+<view animation="{{animationData}}" class="box" wx:if="{{now_state}}">
+<!--弹窗内部内容-->
+<view>所有图片资源均来源于网络，本小程序仅供支持学习和交流，不承担任何相应责任</view>
+<text selectable="true">小程序已开源 GitHub：https://github.com/Tomoyo-Kusosawa/Eating-bar/</text>
+</view>

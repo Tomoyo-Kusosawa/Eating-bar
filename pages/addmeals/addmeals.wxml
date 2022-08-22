@@ -1,0 +1,58 @@
+<view class="const-text">亲爱的用户，感谢您对“饭吧”的支持，为了维护社区环境与稳定，更好的更新小程序功能，现向您征集“饭吧”菜谱和反馈意见。</view>
+<text>\n</text>
+<view class="pageSapce">
+<text class="titlename">菜谱征集：</text>
+  <view class="divLine"></view>
+</view>
+  <view class="const-text">亲爱的用户，您好，非常高兴您愿意对“饭吧”的成长提供帮助，菜谱征集目前仅支持以邮件形式收集，我们将在15-21个工作日内回复您，感谢您的谅解</view>
+  <view class="pageSapce">
+  <text class="titlename">邮件格式：长摁复制</text>
+  <text>\n</text>
+  <text class="const-mail" selectable="true"> 
+      title: "西红柿炒鸡蛋",（提交菜谱的菜品名称）
+      content: "（简短简介，请控制在20字以内）",
+      imgSrc: "菜品图片（邮件附件001.jpg）",
+      detail: "（这里是详细步骤内容）",
+      BV:"BV号（如果没有可以忽略）",,
+      num: ['007','301'],（所需材料代码，详见下表）</text>
+</view>
+<text>\n</text>
+<view class="pageSapce">
+      <text class="titlename">邮件标题：菜谱征集\n</text>
+      <text class="titlename">发送邮件至tomoyo2716@hotmail.com</text></view>
+<view class="pageSapce">
+<!--表格2-->
+<text>\n</text>
+  <text>附：材料代码表</text>
+  <view class="divLine"></view>
+  <view class="table ">
+    <view class="tr thColor">
+      <view class="th">材料种类</view>
+      <view class="th ">材料名称</view>
+      <view class="th ">代码</view>
+    </view>
+    <view class="table-wrap">
+      <block wx:for="{{listData}}" wx:key="{{code}}">
+        <view class="tr" wx:if="{{index%2==0}}">
+          <view class="td">{{item.col1}}</view>
+          <view class="td">{{item.col2}}</view>
+          <view class="td">{{item.col3}}</view>
+        </view>
+        <view class="tr tdColor" wx:else>
+          <view class="td">{{item.col1}}</view>
+          <view class="td">{{item.col2}}</view>
+          <view class="td">{{item.col3}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<text>\n</text>
+<view class="pageSapce">
+<text class="titlename2">问题反馈：</text>
+  <view class="divLine"></view></view>
+  <view class="const-text">亲爱的用户，您好，非常高兴您愿意对“饭吧”的成长提供帮助，您在使用过程中遇到的问题或意见都可以发送邮件给我们！我们将在15-21个工作日内回复您，感谢您的谅解</view>
+  <view class="pageSapce">
+    <text>\n</text>
+      <text class="titlename2">邮件标题：问题反馈\n</text>
+      <text class="titlename2">发送邮件至tomoyo2716@hotmail.com</text></view>

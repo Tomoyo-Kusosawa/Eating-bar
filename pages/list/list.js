@@ -8,35 +8,38 @@ Page({
     ArticleList: [
       {
         article_id: 1,
-        title: 'This is Title',
-        release_time: '2020-03-12 09:42:19',
-        image: '/images/meal/001.jpg',
-        text: 'This is content of article. This is content of article. ',
-        teacher_id: 1
+        title: '周一',
+        release_time: '2022-08-22 09:42:19',
+        image: '/images/date/monday.png',
+        reason:'美好的一周从周一开始，今日推荐菜品'+"水煮西兰花"
       },
       {
         article_id: 2,
-        title: 'This is Title This is Title',
-        release_time: '2020-03-12 09:42:19',
-        image: 'https://img1.baidu.com/it/u=1001511637,3492134614&fm=26&fmt=auto&gp=0.jpg',
-        text: 'This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. ',
-        teacher_id: 2
+        title: '周二',
+        release_time: '2022-08-22 09:42:19',
+        image: '/images/date/2.png',
+        reason:'美好的一周从周二开始，今日推荐菜品'+"水煮菠菜"
       },
       {
         article_id: 3,
-        title: 'This is Title This is Title This is Title',
-        release_time: '2020-03-12 09:42:19',
-        image: 'https://img1.baidu.com/it/u=1001511637,3492134614&fm=26&fmt=auto&gp=0.jpg',
-        text: 'This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. ',
-        teacher_id: 3
+        title: '周三',
+        release_time: '2022-08-22 09:42:19',
+        image: '/images/date/3.png',
+        reason:'美好的一周从周三开始，今日推荐菜品'+"猪肉炖白菜"
+  
       },
       {
         article_id: 4,
-        title: 'This is Title This is Title This is Title This is Title',
+        title: '周四',
         release_time: '2020-03-12 09:42:19',
-        image: 'https://img1.baidu.com/it/u=1001511637,3492134614&fm=26&fmt=auto&gp=0.jpg',
-        text: 'This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. This is content of article. ',
-        teacher_id: 4
+        image: '/images/date/icons8-星期四-48.png',
+        reason:'美好的一周从周四开始，今日推荐菜品'+"红烧羊肉萝卜"
+      },  {
+        article_id: 5,
+        title: '周五',
+        release_time: '2022-08-22 09:42:19',
+        image: '/images/date/5.png',
+        reason:'美好的一周从周五开始，今日推荐菜品'+"山药羊肉汤"
       }
     ]
   },

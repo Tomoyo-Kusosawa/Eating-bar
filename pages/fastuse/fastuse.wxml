@@ -2,10 +2,11 @@
 <view class="sreenBigBox">
   <view class="sreenBox">
     <view class="sreenItems">
-      <view class='sreen ' bindtap="sreenShow">筛选<image class='head {{sreenShow&&"rotating"}}' src="/images/tips/79.jpg"/></view>
-      <view class="sort" bindtap="sortShow">新功能维护中<image class='head {{sortShow&&"rotating"}}' src="/images/tips/79.jpg"/></view>
+      <view class='sreen ' bindtap="sreenShow">筛选<image class='head {{sreenShow&&"rotating"}}' src="/images/tips/79.png"/></view>
+      <view class="sort" bindtap="sortShow">新功能维护中<image class='head {{sortShow&&"rotating"}}' src="/images/tips/79.png"/></view>
     </view>
   </view>
+  
     <!-- 下拉框 -->
 <view class="sreenConainer" style="height:{{sreenShow?1500:0}}rpx">
   <view class="chooseBox">
@@ -16,7 +17,7 @@
       </view>
     </scroll-view>
     <scroll-view class="chooseItems" scroll-y> 
-             <block wx:for="{{chooseItems[typeCurrentIndex]}}">
+             <block wx:for="{{chooseItems[typeCurrentIndex]}}" wx:key="key">
                <view class='ItemLabel {{item.selected===true?"choosing":""}}' data-value="{{item.name}}" bindtap="chooseItem" checked="{{item.selected}}" data-index="{{index}}">
                 {{item.name}}                                  
                </view>
@@ -31,10 +32,15 @@
    <view style="width: 100%;"/>
    <view class='mask' v-if="{{flag}}" bindtap="mask"></view>
 </view>
- 
-<view class="sreenConainer" style="height:{{sortShow?1000:0}}rpx">
-   
- 
+<view  class="article-block" wx:for="{{ ArticleLists }}" wx:key="index" bindtap="gotoArticleDetail" data-articleid="{{ item.articleid}}">
+    <view class="article-text">
+      <view class="article-title">{{ item.title }}</view>
+      <view class="article-content">{{ item.content }}</view>
+      <view class="article-time">{{ item.date }}</view>
+    </view>
+    <image class="article-image" src="{{ item.imgSrc }}"></image>
+  </view>
+<view class="sreenConainer" style="height:{{sortShow?1000:0}}rpx">  
 </view>
- 
 </view>
+<!-- 列表 --> 

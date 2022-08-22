@@ -1,17 +1,20 @@
 // miniprogram/pages/lunbo/lunbo.js
+var util = require('../../utils/utils.js');
 Page({
 
   data: {
-    background: [{title:'图一',url:'/images/meal/004..jpg'}, 
-    {title:'图二',url:'/images/meal/001.jpg'}, 
-    {title:'图三',url:'/images/meal/002.jpg'},
-    {title:'图四',url:'/images/meal/003.jpg'}, 
-    {title:'图五',url:'/images/meal/004..jpg'}],
+    background: 
+    [{title:'中秋安康',url:'/images/post/post001.jpg'}, 
+    {title:'中秋安康',url:'/images/post/post001.jpg'}, 
+    {title:'中秋安康',url:'/images/post/post001.jpg'},
+    {title:'中秋安康',url:'/images/post/post001.jpg'}, 
+    {title:'中秋安康',url:'/images/post/post001.jpg'}],
     vertical: false,
     interval: 2000,
     duration: 500,
     bannerCurrent: 0,
-    Hei:""    
+    Hei:"" ,
+    now_state:null 
   },
   //goto
   onTapDayWeather(){
@@ -56,5 +59,50 @@ bannerChange: function(e){
     this.setData({
       duration: e.detail.value
     })
-  }
+  },
+  onLoad: function () {
+    // 调用函数时，传入new Date()参数，返回值是日期和时间
+    var time = util.formatTime(new Date());
+    // 再通过setData更改Page()里面的data，动态更新页面的数据
+    this.setData({
+      time: time
+    });
+  },
+  //
+  Popup(e){
+    var that = this 
+    that.setData({
+      now_state:true
+    })
+    console.log(that.data.now_state);
+ 
+  },
+  //点击黑色背景触发的事件
+  hideModal(e){
+    //首先创建一个动画对象（让页面不在是一个“死页面”）
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    //animation.translateY(300)中的translate函数是表示在y轴上平移多少px，而后面紧接着的.step表示前面动画的完成，可以开始下一个动画了
+    animation.translateY(300).step()
+    this.setData({
+      /*这里的export函数是导出动画队列，在外米的wxml中会用到该数据，同时export方法在调用完后会清掉前面的动画操作 */
+      animationData: animation.export(),
+    })
+    /*这里的setTimeout是一个延时器，而它在这里延时了200ms，然后在执行动画 */
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        now_state: false,
+      })
+    }.bind(this), 200)
+    var that = this
+   
+  },
+
 })
+//

@@ -5,6 +5,7 @@
   <view class="article-block" wx:for="{{ ArticleList }}" wx:key="index" bindtap="gotoArticleDetail" data-articleid="{{ item.article_id }}">
     <view class="article-text">
       <view class="article-title">{{ item.title }}</view>
+      <view class="article-reason">{{ item.reason }}</view>
       <view class="article-time">{{ item.release_time }}</view>
     </view>
     <image class="article-image" src="{{ item.image }}"></image>

@@ -6,28 +6,24 @@
     "pages/list/list",
     "pages/article-detail/article-detail",
     "pages/news_details/news_details",
-    "pages/news_list/news_list"
+    "pages/news_list/news_list",
+    "pages/addmeals/addmeals"
   ],
   "tabBar": {
     "list": [
       {
-        "text": "homepage",
+        "text": "首页",
         "pagePath": "pages/homepage/homepage",
-        "iconPath": "images/1.jpg",
-        "selectedIconPath": "images/1.jpg"
+        "iconPath": "images/homepage.png",
+        "selectedIconPath": "images/homepage.png"
       },
       {
-        "text": "mine",
+        "text": "我的",
         "pagePath": "pages/mine/mine",
-        "iconPath": "images/1.jpg",
-        "selectedIconPath": "images/1.jpg"
-      },
-      {
-        "text": "notes",
-        "pagePath": "pages/news_list/news_list",
-        "iconPath": "images/1.jpg",
-        "selectedIconPath": "images/1.jpg"
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine.png"
       }
+  
     ]
   },
   "window": {
@@ -37,5 +33,6 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json" ,
+  "lazyCodeLoading": "requiredComponents"
 }

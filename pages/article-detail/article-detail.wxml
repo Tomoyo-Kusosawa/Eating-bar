@@ -5,13 +5,15 @@
     <image class="avatar" src="{{articleData.avatar}}"></image>
     <text class="author">{{articleData.author}}</text>
     <text class="const-text">发表于</text>
+    
     <text class="date">{{articleData.dateTime}}</text>
   </view>
   <text class="title">{{articleData.title}}</text>
+  <text class="article-bv" selectable="true">长摁复制{{articleData.BV}}</text>
+  <text bindtap="fun" selectable="true"></text>
   <view class="tool">
     <view class="circle-img">
-      <image src="/images/1.jpg"></image>
-      <image class="share-img" src="/images/1.jpg"></image>
+      <image src="/images/tips/love.png"></image>
     </view>
     <view class="horizon"></view>
   </view>

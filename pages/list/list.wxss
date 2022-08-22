@@ -26,7 +26,12 @@
   font-size: 28rpx;
   padding-bottom: 10rpx;
 }
-
+.article-reason{
+  position: absolute;	/* 垂直居上 */
+  top: 60rpx;	/* 垂直居上 */
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
 .article-time {
   position: absolute;	/* 垂直居下 */
   bottom: 0rpx;	/* 垂直居下 */
@@ -37,7 +42,8 @@
 
 .article-image {
   position: absolute;
-  right: 30rpx;
-  width: 300rpx;
-  height: 200rpx;
+  margin-top: 60rpx;
+  right: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
 }

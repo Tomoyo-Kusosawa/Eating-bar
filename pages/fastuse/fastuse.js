@@ -1,7 +1,9 @@
+const { articleList } = require("../../data/article-data.js");
 Page({
   data:{
        //类型
-  choosevalues:[],
+       chooseValues:[],
+  ArticleLists:articleList,
   typeItems:['菜菜','肉肉','调料','蛋蛋','生存','忌口'],
   typeCurrentIndex:0,
    chooseItems:{
@@ -10,7 +12,7 @@ Page({
       value:'001',
       selected:false
     },{
-      name:'胡萝卜',
+      name:'白萝卜',
       value:'002',
       selected:false
     },{
@@ -33,7 +35,12 @@ Page({
       name:'西红柿',
       value:'007',
       selected:false
-    }],
+    },{
+      name:'山药',
+      value:'008',
+      selected:false
+    }
+  ],
     1:[{
       name:'猪肉',
       value:'101',
@@ -55,8 +62,26 @@ Page({
     {
       name:'水',
       value:'203',
-      selected:true
-    }],
+      selected:false
+    },
+    {
+      name:'姜',
+      value:'204',
+      selected:false
+    },{
+      name:'葱',
+      value:'205',
+      selected:false
+    },{
+      name:'蒜',
+      value:'206',
+      selected:false
+    },{
+      name:'黄酒',
+      value:'207',
+      selected:false
+    }
+  ],
     3:[{
       name:'鸡蛋',
       value:'301',
@@ -90,7 +115,7 @@ Page({
 //下拉收回
 sreenShow:function(){
   this.setData({
-    sreenShow:!this.data.sreenShow
+    sreenShow:!this.data.sreenShow,
   })
 },
 cancel:function(){
@@ -119,7 +144,7 @@ clear:function(){
 //确认筛选
 confirm:function(){
   this.setData({
-    sreenShow:false,
+    sreenShow:false, 
   })
 },
 sortShow:function(){
@@ -146,8 +171,37 @@ chooseType:function(e){
 chooseItem:function(e){
   this.data.chooseItems[this.data.typeCurrentIndex][e.target.dataset.index].selected=!this.data.chooseItems[this.data.typeCurrentIndex][e.target.dataset.index].selected
   this.setData({
-    chooseItems:this.data.chooseItems
+    chooseItems:this.data.chooseItems,
+  })
+//choosevalue
+let arr = this.data.chooseItems
+let values = []
+for(let key in arr) {
+  arr[key].map(item => {
+    if(item.selected) {
+       values.push(item.value)
+    }
+  })}
+this.setData({
+  chooseValues: values
+})
+this.search()
+},
+//进入详情页
+gotoArticleDetail: function (event) {
+  // 当前要跳转到另一个界面，但是会保留现有界面
+  wx.navigateTo({
+    url: `../article-detail/article-detail?articleid=${event.currentTarget.dataset.articleid}`
   })
 },
-
+onLoad(){
+  this.search();
+},
+search(){
+  let ArticleLists=articleList.filter(a=>this.data.chooseValues.reduce((p,c)=>p&&a.vavlue.includes(c),articleList))
+  console.log(ArticleLists);
+  this.setData({
+    ArticleLists:ArticleLists
+  })
+}
 })

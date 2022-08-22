@@ -1,6 +1,6 @@
 //获取应用实例
 const app = getApp();
- 
+
 Page({
   /**
    * 页面的初始数据
@@ -8,9 +8,13 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    menuitems: [
+      { text: '版本问题汇总', url: '../news_list/news_list', icon: '../../images/notes.png', tips: '' },
+      { text: '反馈与提交中心', url: '../addmeals/addmeals', icon: '../../images/feedback.png', tips: '' }
+    ]
   },
- 
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,11 +37,11 @@ Page({
       })
     }
   },
- 
+
   getUserInfo: function (e) {
     this.setUserInfo(e.detail.userInfo);
   },
- 
+
   setUserInfo: function (userInfo) {
     if (userInfo != null) {
       app.globalData.userInfo = userInfo
@@ -47,4 +51,9 @@ Page({
       })
     }
   }
+  
 })
+
+  /**
+   * 页面的初始数据
+   */

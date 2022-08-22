@@ -52,7 +52,14 @@
   letter-spacing: 2px;
   color: #4b556c;
 }
-
+.article-bv{
+  margin-left: 40rpx;
+  font-size:x-small;
+  font-weight: 700;
+  margin-top: 30rpx;
+  letter-spacing: 2px;
+  color: #777779;
+}
 .tool {
   margin-top: 20rpx;
 }

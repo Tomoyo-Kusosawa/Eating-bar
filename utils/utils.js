@@ -1,28 +1,18 @@
-// utils.js
-// 获取当前日期
-function getCurrDate() {
-  var date = new Date();
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1; // 月份
-  var day = date.getDate();
-  if (month < 10) {
-      month = "0" + month;
-  }
-  if (day < 10) {
-      day = "0" + day;
-  }
-  return year + "-" + month + "-" + day;
+const formatTime = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return [year, month, day].map(formatNumber).join('/') 
 }
-// 获取当前时间
-function getCurrTime(){
-  // return: 12:01
-  var date = new Date();
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  return hours+":"+minutes;
+
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
 }
-// 重点
+
 module.exports = {
-  getCurrDate,
-  getCurrTime,
+  formatTime: formatTime
 }
+
+
